@@ -19,4 +19,16 @@ public class Helper {
             System.out.println("element is not getting visible");
         }
     }
+
+    public static void waitForAlert(AppiumDriver driver,int timeout) {
+
+        try {
+
+            WebDriverWait wait = new WebDriverWait(driver, timeout);
+            MobileElement element = (MobileElement) wait.until(ExpectedConditions.alertIsPresent());
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Alert is not present");
+        }
+    }
 }

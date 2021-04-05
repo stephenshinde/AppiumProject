@@ -19,61 +19,67 @@ public class LoginPage extends BasePage {
 
 
         @AndroidFindBy(id = "nextButton")
-        public MobileElement GetStarted_button;
+        public MobileElement getStarted_button;
 
         @AndroidFindBy(id = "button1")
-        public MobileElement Continue_button;
+        public MobileElement continue_button;
 
         @AndroidFindBy(id = "countrySpinner")
-        public MobileElement CountryCode_Field;
+        public MobileElement countryCode_Field;
 
         @AndroidFindBy(id = "numberField")
-        public MobileElement PhoneNumber_Field;
+        public MobileElement phoneNumber_Field;
 
         @AndroidFindBy(id = "nextButton")
-        public MobileElement ContinueLogin_button;
+        public MobileElement continueLogin_button;
 
         @AndroidFindBy(id = "searchEditText")
-        public MobileElement SearchCountry_Field;
+        public MobileElement searchCountry_Field;
 
         @AndroidFindBy(id = "title")
-        public List<MobileElement> Country_List;
+        public List<MobileElement> country_List;
 
         @AndroidFindBy(id = "nextButton")
-        public MobileElement PrivacyAgreeContinue_button;
+        public MobileElement privacyAgreeContinue_button;
 
         @AndroidFindBy(id = "manualInputButton")
-        public MobileElement CreateProfile_button;
+        public MobileElement createProfile_button;
 
         @AndroidFindBy(id = "firstName")
-        public MobileElement FirstName;
+        public MobileElement firstNameText;
 
-        @AndroidFindBy(id = "firstName")
-        public MobileElement LastName;
+        @AndroidFindBy(id = "lastName")
+        public MobileElement lastNameText;
+
+        @AndroidFindBy(id = "button_skip")
+        public MobileElement laterButton;
+
+        @AndroidFindBy(id = "button_backup")
+        public MobileElement backupButton;
 
 
         public void clickGetStartedBtn() {
-                clickButton(GetStarted_button);
+                clickButton(getStarted_button);
         }
 
         public void clickCountryCodeField() {
-                clickButton(CountryCode_Field);
+                clickButton(countryCode_Field);
         }
 
         public void enterCountryName(String value) {
-                enterText(SearchCountry_Field, value);
+                enterText(searchCountry_Field, value);
         }
 
         public void clickCountryFromList() {
-                Country_List.get(0).click();
+                country_List.get(0).click();
         }
 
         public void enterPhoneNumber(String phoneNumber) {
-                enterText(PhoneNumber_Field, phoneNumber);
+                enterText(phoneNumber_Field, phoneNumber);
         }
 
         public void clickContinueLogin() {
-                clickButton(ContinueLogin_button);
+                clickButton(continueLogin_button);
         }
 
         public void acceptConfirmAlert() {
@@ -81,26 +87,42 @@ public class LoginPage extends BasePage {
         }
 
         public String getConfirmAlertHeaderText() {
+                Helper.waitForAlert(getDriver() ,60);
                 return getDriver().switchTo().alert().getText();
         }
 
         public void acceptPrivacyAgreement() {
-                clickButton(PrivacyAgreeContinue_button);
+                clickButton(privacyAgreeContinue_button);
         }
 
         public void clickTypeNameManualButton() {
-                Helper.waitTillElementsGetVisible(getDriver(), CreateProfile_button, 120);
-                clickButton(CreateProfile_button);
+                Helper.waitTillElementsGetVisible(getDriver(), createProfile_button, 180);
+                clickButton(createProfile_button);
         }
 
-        public void enterFirstName(String firstName) {
-                clearText(FirstName);
-                enterText(FirstName, firstName);
+        public void enterFirstName(String firstNameValue) {
+                clearText(firstNameText);
+                enterText(firstNameText, firstNameValue);
         }
 
-        public void enterLastName(String lastName) {
-                clearText(LastName);
-                enterText(LastName, lastName);
+        public void enterLastName(String lastNameValue) {
+                clearText(lastNameText);
+                enterText(lastNameText, lastNameValue);
+        }
+
+        public void clickLaterBtn() {
+
+                clickButton(laterButton);
+        }
+
+
+        private void waitToLoadBackupBtn(){
+                Helper.waitTillElementsGetVisible(getDriver(), backupButton, 60);
+        }
+
+        public boolean isBackupPresent(){
+                waitToLoadBackupBtn();
+                return backupButton.isDisplayed();
         }
 
 

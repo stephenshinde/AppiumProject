@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/91970/AppiumTask">
         <parameter name="platformVersion" value="8.1.0" />
-        <parameter name="deviceName" value="~Galaxy S10e" />
+        <parameter name="deviceName" value="Galaxy J7 Prime" />
         <classes>
             <class name="Tests.LoginTest">
                 <methods>

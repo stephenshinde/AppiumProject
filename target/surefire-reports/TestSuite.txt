@@ -1,24 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 122.74 s <<< FAILURE! - in TestSuite
-LoginApplication(Tests.LoginTest)  Time elapsed: 72.55 s  <<< FAILURE!
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 2, Time elapsed: 4.343 s <<< FAILURE! - in TestSuite
+launchApp(Tests.LoginTest)  Time elapsed: 3.963 s  <<< FAILURE!
 org.openqa.selenium.WebDriverException: 
-org.openqa.selenium.NoSuchSessionException: A session is either terminated or not started
+Connection refused: connect
 Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
 System info: host: 'LAPTOP-BOKLLJ5K', ip: '192.168.0.109', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
-Driver info: io.appium.java_client.AppiumDriver
-Capabilities {appActivity: com.truecaller.ui.Truecalle..., appPackage: com.truecaller, autoGrantPermissions: true, automationName: UiAutomator2, databaseEnabled: false, desired: {appActivity: com.truecaller.ui.Truecalle..., appPackage: com.truecaller, autoGrantPermissions: true, automationName: UiAutomator2, deviceName: ~Galaxy S10e, platformName: android, platformVersion: 8.1.0}, deviceApiLevel: 27, deviceManufacturer: samsung, deviceModel: SM-G610F, deviceName: 52035325508d1489, deviceScreenDensity: 480, deviceScreenSize: 1080x1920, deviceUDID: 52035325508d1489, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 3, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 72, takesScreenshot: true, viewportRect: {height: 1848, left: 0, top: 72, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: 3b8ab320-b296-4b3a-8978-c840a32f156c
-*** Element info: {Using=id, value=manualInputButton}
-	at Tests.LoginTest.LoginApplication(LoginTest.java:32)
-Caused by: org.openqa.selenium.NoSuchSessionException: 
-A session is either terminated or not started
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'LAPTOP-BOKLLJ5K', ip: '192.168.0.109', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
-Driver info: io.appium.java_client.AppiumDriver
-Capabilities {appActivity: com.truecaller.ui.Truecalle..., appPackage: com.truecaller, autoGrantPermissions: true, automationName: UiAutomator2, databaseEnabled: false, desired: {appActivity: com.truecaller.ui.Truecalle..., appPackage: com.truecaller, autoGrantPermissions: true, automationName: UiAutomator2, deviceName: ~Galaxy S10e, platformName: android, platformVersion: 8.1.0}, deviceApiLevel: 27, deviceManufacturer: samsung, deviceModel: SM-G610F, deviceName: 52035325508d1489, deviceScreenDensity: 480, deviceScreenSize: 1080x1920, deviceUDID: 52035325508d1489, javascriptEnabled: true, locationContextEnabled: false, networkConnectionEnabled: true, pixelRatio: 3, platform: LINUX, platformName: Android, platformVersion: 8.1.0, statBarHeight: 72, takesScreenshot: true, viewportRect: {height: 1848, left: 0, top: 72, width: 1080}, warnings: {}, webStorageEnabled: false}
-Session ID: 3b8ab320-b296-4b3a-8978-c840a32f156c
-*** Element info: {Using=id, value=manualInputButton}
-	at Tests.LoginTest.LoginApplication(LoginTest.java:32)
+Driver info: driver.version: AppiumDriver
+Caused by: java.net.ConnectException: Connection refused: connect
 
